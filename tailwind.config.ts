@@ -9,7 +9,24 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "transparent-white": "rgba(255, 255, 255, 0.85)",
+        "dark-orange": "#e40c1c",
+        "light-orange": "#fc5c3c",
+      },
+
+      animation: {
+        "fade-in": "fade_in 1s",
+      },
+
+      keyframes: {
+        fade_in: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],
