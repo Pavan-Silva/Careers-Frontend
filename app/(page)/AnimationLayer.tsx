@@ -2,6 +2,7 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import JobCard from "./JobCard";
+import { useGSAP } from "@gsap/react";
 
 const cards = [
   { location: "Colombo", title: "Associate Software Engineer", color: "white" },
@@ -19,7 +20,7 @@ const AnimationLayer = () => {
   let yPercent = 0;
   let direction = -1;
 
-  useEffect(() => {
+  useGSAP(() => {
     requestAnimationFrame(animation);
   });
 
@@ -36,8 +37,8 @@ const AnimationLayer = () => {
   };
 
   return (
-    <div className="hidden w-full h-full absolute lg:flex flex-col overflow-hidden">
-      <div className="ml-auto mr-20" ref={cards1}>
+    <div className="hidden w-full max-w-[1280px] h-full absolute lg:flex flex-col overflow-hidden">
+      <div className="ml-auto" ref={cards1}>
         {cards.map((card, index) => (
           <div
             key={index}
@@ -58,7 +59,7 @@ const AnimationLayer = () => {
         ))}
       </div>
 
-      <div className="ml-auto mr-20" ref={cards2}>
+      <div className="ml-auto" ref={cards2}>
         {cards.map((card, index) => (
           <div
             key={index}

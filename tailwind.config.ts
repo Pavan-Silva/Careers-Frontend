@@ -12,8 +12,8 @@ const config: Config = {
     extend: {
       colors: {
         "transparent-white": "rgba(255, 255, 255, 0.85)",
-        "dark-orange": "#e40c1c",
-        "light-orange": "#fc5c3c",
+        "lime-green": "#23CD6B",
+        "matte-black": "#272D2D",
         "light-pink": "#fcccd4",
         "light-green": "#c4f4cc",
       },
@@ -23,7 +23,7 @@ const config: Config = {
       },
 
       width: {
-        clamp_image: "clamp(600px , 100%, 680px)",
+        clamp_image: "clamp(600px , 100%, 800px)",
       },
 
       animation: {

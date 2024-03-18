@@ -37,7 +37,7 @@ const AppNavbar = () => {
     >
       <NavbarBrand>
         <GrTechnology className="w-8 h-8 mr-1" />
-        <p className="font-bold text-inherit text-xl">ACME</p>
+        <p className="font-bold text-inherit text-xl">Tahike</p>
       </NavbarBrand>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
