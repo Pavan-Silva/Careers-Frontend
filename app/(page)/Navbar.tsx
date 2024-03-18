@@ -20,14 +20,18 @@ const AppNavbar = () => {
 
   return (
     <Navbar
-      shouldHideOnScroll
-      isBlurred={position > 50}
       maxWidth="full"
       onMenuOpenChange={setIsMenuOpen}
+      shouldHideOnScroll={!isMenuOpen}
+      isBlurred={position > 50 && !isMenuOpen}
       className={`p-2 ${
         position <= 50
-          ? "text-white transition-background duration-1000 bg-transparent ease-in-out"
-          : "animate-fade-in"
+          ? !isMenuOpen
+            ? "text-white transition-background duration-1000 bg-transparent ease-in-out"
+            : "bg-white"
+          : !isMenuOpen
+          ? "animate-fade-in"
+          : ""
       }`}
       onScrollPositionChange={(position: number) => setPosition(position)}
     >
