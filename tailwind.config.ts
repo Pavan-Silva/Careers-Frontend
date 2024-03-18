@@ -14,6 +14,16 @@ const config: Config = {
         "transparent-white": "rgba(255, 255, 255, 0.85)",
         "dark-orange": "#e40c1c",
         "light-orange": "#fc5c3c",
+        "light-pink": "#fcccd4",
+        "light-green": "#c4f4cc",
+      },
+
+      fontSize: {
+        clamp_title: "clamp(2.5rem , 6vw, 5.6rem)",
+      },
+
+      width: {
+        clamp_image: "clamp(600px , 100%, 680px)",
       },
 
       animation: {
