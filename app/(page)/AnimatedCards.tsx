@@ -17,6 +17,7 @@ const cards = [
 const AnimatedCards = () => {
   const cards1 = useRef(null);
   const cards2 = useRef(null);
+  gsap.registerPlugin(useGSAP);
 
   let yPercent = 0;
   let direction = -1;

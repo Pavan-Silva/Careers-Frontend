@@ -9,6 +9,7 @@ import { useRef } from "react";
 
 const Hero = () => {
   const container = useRef(null);
+  gsap.registerPlugin(useGSAP);
 
   useGSAP(
     () => {
@@ -31,7 +32,7 @@ const Hero = () => {
       <AnimatedCards />
 
       <div className="h-full max-w-[1280px] flex justify-center px-5 pt-5 pb-0 relative overflow-hidden">
-        <div className="absolute w-clamp_image bottom-0 md:right-0 lg:hidden">
+        <div className="image opacity-0 absolute w-clamp_image bottom-0 md:right-0 lg:hidden">
           <Image priority src={image} alt="student_image" />
         </div>
 
@@ -50,7 +51,7 @@ const Hero = () => {
           </button>
         </div>
 
-        <div className="opacity-0 image hidden w-clamp_image place-self-end ml-auto -mr-20 lg:block">
+        <div className="image opacity-0 hidden w-clamp_image place-self-end ml-auto -mr-20 lg:block">
           <Image priority src={image} alt="student_image" />
         </div>
 
