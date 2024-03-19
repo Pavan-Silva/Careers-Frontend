@@ -19,7 +19,7 @@ const config: Config = {
       },
 
       fontSize: {
-        clamp_title: "clamp(2.5rem , 6vw, 5.6rem)",
+        clamp_title: "clamp(2.6rem , 6vw, 5.6rem)",
       },
 
       width: {
