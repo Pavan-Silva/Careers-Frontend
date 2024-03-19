@@ -14,7 +14,7 @@ const cards = [
   { location: "India", title: "Business Analyst", color: "green" },
 ];
 
-const AnimationLayer = () => {
+const AnimatedCards = () => {
   const cards1 = useRef(null);
   const cards2 = useRef(null);
 
@@ -41,7 +41,7 @@ const AnimationLayer = () => {
     <ScrollShadow
       visibility="both"
       hideScrollBar
-      className="hidden w-full max-w-[1280px] h-full absolute lg:flex flex-col overflow"
+      className="card-layer hidden w-full max-w-[1280px] h-full absolute lg:flex flex-col overflow opacity-0"
     >
       <div className="ml-auto" ref={cards1}>
         {cards.map((card, index) => (
@@ -88,4 +88,4 @@ const AnimationLayer = () => {
   );
 };
 
-export default AnimationLayer;
+export default AnimatedCards;

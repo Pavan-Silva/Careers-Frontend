@@ -5,7 +5,7 @@ import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 const SearchBar = () => {
   return (
-    <div className="flex w-full h-full absolute justify-center items-end">
+    <div className="search-bar opacity-0 flex w-full bottom-0 absolute justify-center items-end px-5">
       <Input
         radius="full"
         size="lg"
