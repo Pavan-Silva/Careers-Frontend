@@ -1,8 +1,9 @@
 "use client";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import JobCard from "./JobCard";
 import { useGSAP } from "@gsap/react";
+import { ScrollShadow } from "@nextui-org/react";
 
 const cards = [
   { location: "Colombo", title: "Associate Software Engineer", color: "white" },
@@ -10,7 +11,7 @@ const cards = [
   { location: "Jaffna", title: "Quality Assurance Personnel", color: "green" },
   { location: "Singapore", title: "Full Stack Developer", color: "white" },
   { location: "Dubai", title: "Junior Sofware Intern", color: "pink" },
-  { location: "India", title: "BI Analyst", color: "green" },
+  { location: "India", title: "Business Analyst", color: "green" },
 ];
 
 const AnimationLayer = () => {
@@ -37,17 +38,21 @@ const AnimationLayer = () => {
   };
 
   return (
-    <div className="hidden w-full max-w-[1280px] h-full absolute lg:flex flex-col overflow-hidden">
+    <ScrollShadow
+      visibility="both"
+      hideScrollBar
+      className="hidden w-full max-w-[1280px] h-full absolute lg:flex flex-col overflow"
+    >
       <div className="ml-auto" ref={cards1}>
         {cards.map((card, index) => (
           <div
             key={index}
             className={`${
               index % 2 == 0
-                ? "ml-72"
+                ? "pt-32"
                 : index % 3 == 0
                 ? "pt-24 ml-80"
-                : "pt-32"
+                : "ml-72"
             }`}
           >
             <JobCard
@@ -65,10 +70,10 @@ const AnimationLayer = () => {
             key={index}
             className={`${
               index % 2 == 0
-                ? "ml-72"
+                ? "pt-32"
                 : index % 3 == 0
                 ? "pt-24 ml-80"
-                : "pt-32"
+                : "ml-72"
             }`}
           >
             <JobCard
@@ -79,7 +84,7 @@ const AnimationLayer = () => {
           </div>
         ))}
       </div>
-    </div>
+    </ScrollShadow>
   );
 };
 
