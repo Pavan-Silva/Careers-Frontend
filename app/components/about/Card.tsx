@@ -9,7 +9,6 @@ const Card = (props: {
 }) => {
   return (
     <div
-      id={props.id}
       className={`box flex flex-col lg:flex-row justify-center items-center ${props.id}`}
     >
       <div className="max-w-lg">

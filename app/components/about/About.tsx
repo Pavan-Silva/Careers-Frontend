@@ -64,7 +64,7 @@ const About = () => {
       <AnimatedContent>
         <div className="bg-white bg-opacity-90 rounded-t-[2.5rem] flex flex-col gap-20 lg:gap-28 p-10 lg:p-28 overflow-hidden shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
           {blocks.map((block, index) => (
-            <div key={index}>
+            <div id={block.id} key={index}>
               {index !== 0 ? (
                 <Divider className="max-w-2xl m-auto mb-28" />
               ) : null}

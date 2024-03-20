@@ -13,9 +13,9 @@ import { useState } from "react";
 import { GrTechnology } from "react-icons/gr";
 
 const menuItems = [
-  { name: "Locations", url: "" },
+  { name: "About", url: "#about" },
+  { name: "Work", url: "#work" },
   { name: "Tech Stack", url: "#stack" },
-  { name: "Students", url: "" },
   { name: "How We Hire", url: "" },
 ];
 
@@ -42,7 +42,7 @@ const AppNavbar = () => {
     >
       <NavbarBrand>
         <GrTechnology className="w-8 h-8 mr-1" />
-        <p className="font-bold text-inherit text-xl">Tahike</p>
+        <p className="font-bold text-inherit text-xl">BASIC</p>
       </NavbarBrand>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
