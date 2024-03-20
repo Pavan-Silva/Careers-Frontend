@@ -12,7 +12,12 @@ import Link from "next/link";
 import { useState } from "react";
 import { GrTechnology } from "react-icons/gr";
 
-const menuItems = ["Locations", "Tech Stack", "Students", "How We Hire"];
+const menuItems = [
+  { name: "Locations", url: "" },
+  { name: "Tech Stack", url: "#stack" },
+  { name: "Students", url: "" },
+  { name: "How We Hire", url: "" },
+];
 
 const AppNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,9 +51,9 @@ const AppNavbar = () => {
             <Link
               color="foreground"
               className="text-lg mx-2 hover:text-transparent-white"
-              href="#"
+              href={item.url}
             >
-              {item}
+              {item.name}
             </Link>
           </NavbarItem>
         ))}
@@ -75,8 +80,8 @@ const AppNavbar = () => {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full" href="#">
-              {item}
+            <Link className="w-full" href={item.url}>
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

@@ -1,3 +1,4 @@
+import About from "./components/about/About";
 import Hero from "./components/hero/Hero";
 import AppNavbar from "./components/hero/Navbar";
 
@@ -6,7 +7,7 @@ export default function Home() {
     <main className="antialiased">
       <AppNavbar />
       <Hero />
-      <div className="bg-white w-full h-svh">abc</div>
+      <About />
     </main>
   );
 }
