@@ -26,6 +26,7 @@ const AppNavbar = () => {
   return (
     <Navbar
       maxWidth="full"
+      isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll={!isMenuOpen}
       isBlurred={position > 50 && !isMenuOpen}
@@ -77,9 +78,12 @@ const AppNavbar = () => {
         className="sm:hidden"
       />
 
-      <NavbarMenu>
+      <NavbarMenu className="py-5">
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem
+            key={`${item}-${index}`}
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Link className="w-full" href={item.url}>
               {item.name}
             </Link>
