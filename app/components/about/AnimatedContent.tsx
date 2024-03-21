@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const blockItems = ["about", "work", "stack"];
 
@@ -11,9 +12,15 @@ export default function AnimatedContent({
   children: React.ReactNode;
 }>) {
   const container = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     blockItems.map((item) => {
       gsap.fromTo(
         `.${item}`,

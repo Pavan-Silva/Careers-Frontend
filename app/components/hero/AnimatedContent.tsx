@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 export default function AnimatedContent({
   children,
@@ -9,9 +10,16 @@ export default function AnimatedContent({
   children: React.ReactNode;
 }>) {
   const container = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
+    if (prefersReducedMotion) {
+      gsap.set(".title-box, .image, .search-bar", { opacity: 1 });
+      return;
+    }
+
     gsap.fromTo(
       ".title-box",
       { y: 0, opacity: 1 },

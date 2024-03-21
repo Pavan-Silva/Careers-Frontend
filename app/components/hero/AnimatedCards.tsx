@@ -4,6 +4,7 @@ import { useRef } from "react";
 import JobCard from "./JobCard";
 import { useGSAP } from "@gsap/react";
 import { ScrollShadow } from "@nextui-org/react";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const cards = [
   { location: "Colombo", title: "Associate Software Engineer", color: "white" },
@@ -17,6 +18,8 @@ const cards = [
 const AnimatedCards = () => {
   const cards1 = useRef(null);
   const cards2 = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   gsap.registerPlugin(useGSAP);
 
   let yPercent = 0;
@@ -27,6 +30,11 @@ const AnimatedCards = () => {
   });
 
   const animation = () => {
+    if (prefersReducedMotion) {
+      gsap.set(cards1.current, { yPercent: -10 });
+      return;
+    }
+
     if (yPercent <= -100) {
       yPercent = 0;
     }

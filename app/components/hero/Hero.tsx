@@ -7,13 +7,24 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
 import AnimatedContent from "./AnimatedContent";
+import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
 const Hero = () => {
   const container = useRef(null);
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   gsap.registerPlugin(useGSAP);
 
   useGSAP(
     () => {
+      if (prefersReducedMotion) {
+        gsap.set(".image, .title-box, .search-box, .card-layer", {
+          opacity: 1,
+        });
+        
+        return;
+      }
+
       gsap.to(".card-layer", { opacity: 1, duration: 5 });
 
       const tl = gsap.timeline();
