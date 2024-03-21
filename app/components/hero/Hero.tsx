@@ -21,7 +21,7 @@ const Hero = () => {
         gsap.set(".image, .title-box, .search-box, .card-layer", {
           opacity: 1,
         });
-        
+
         return;
       }
 
@@ -44,8 +44,15 @@ const Hero = () => {
       <AnimatedCards />
 
       <div className="h-full max-w-[1280px] flex justify-center px-5 pt-5 pb-0 relative overflow-hidden">
-        <div className="image opacity-0 absolute w-clamp_image bottom-0 md:right-0 lg:hidden">
-          <Image priority src={image} alt="student_image" />
+        <div className="image opacity-0 absolute w-clamp_image h-auto bottom-0 md:right-0 lg:hidden">
+          <Image
+            priority
+            src={image}
+            quality={65}
+            width={800}
+            height={900}
+            alt="student_image"
+          />
         </div>
 
         <AnimatedContent>
@@ -64,8 +71,15 @@ const Hero = () => {
             </button>
           </div>
 
-          <div className="image opacity-0 hidden w-clamp_image place-self-end ml-auto -mr-20 lg:block">
-            <Image priority src={image} alt="student_image" />
+          <div className="image opacity-0 hidden w-clamp_image h-auto place-self-end ml-auto -mr-20 lg:block">
+            <Image
+              priority
+              quality={65}
+              width={800}
+              height={900}
+              src={image}
+              alt="student_image"
+            />
           </div>
 
           <SearchBar />

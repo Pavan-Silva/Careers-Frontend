@@ -11,7 +11,7 @@ const Card = (props: {
     <div
       className={`box flex flex-col lg:flex-row justify-center items-center ${props.id}`}
     >
-      <div className="max-w-lg">
+      <div className="w-full max-w-lg">
         <Image
           priority
           src={props.image}
